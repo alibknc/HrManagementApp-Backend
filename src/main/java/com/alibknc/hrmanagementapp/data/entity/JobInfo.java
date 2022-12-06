@@ -1,9 +1,9 @@
-package com.alibknc.hrmanagementapp.model;
+package com.alibknc.hrmanagementapp.data.entity;
 
-import com.alibknc.hrmanagementapp.model.enums.Department;
-import com.alibknc.hrmanagementapp.model.enums.Level;
-import com.alibknc.hrmanagementapp.model.enums.Position;
-import com.alibknc.hrmanagementapp.model.enums.WorkType;
+import com.alibknc.hrmanagementapp.data.entity.enums.Department;
+import com.alibknc.hrmanagementapp.data.entity.enums.Level;
+import com.alibknc.hrmanagementapp.data.entity.enums.Position;
+import com.alibknc.hrmanagementapp.data.entity.enums.WorkType;
 import lombok.Data;
 
 import javax.persistence.*;

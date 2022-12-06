@@ -1,6 +1,6 @@
 package com.alibknc.hrmanagementapp.client.dto.response;
 
-import com.alibknc.hrmanagementapp.model.enums.PermitType;
+import com.alibknc.hrmanagementapp.data.entity.enums.PermitType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

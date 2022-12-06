@@ -1,30 +1,25 @@
-package com.alibknc.hrmanagementapp.model;
+package com.alibknc.hrmanagementapp.data.entity;
 
 import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Data
 @Entity
-public class ContactInfo {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    Long employeeId;
+    String name;
 
-    String phoneNumber;
+    String surname;
 
-    String email;
+    String identityNumber;
 
-    String city;
-
-    String country;
-
-    String address;
-
-    int postCode;
+    LocalDate birthDate;
 }

@@ -1,9 +1,9 @@
 package com.alibknc.hrmanagementapp.service;
 
 import com.alibknc.hrmanagementapp.client.dto.response.ExpenseDto;
-import com.alibknc.hrmanagementapp.mapper.ExpenseMapper;
-import com.alibknc.hrmanagementapp.model.Expense;
-import com.alibknc.hrmanagementapp.repository.ExpenseRepository;
+import com.alibknc.hrmanagementapp.client.dto.mapper.ExpenseMapper;
+import com.alibknc.hrmanagementapp.data.entity.Expense;
+import com.alibknc.hrmanagementapp.data.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

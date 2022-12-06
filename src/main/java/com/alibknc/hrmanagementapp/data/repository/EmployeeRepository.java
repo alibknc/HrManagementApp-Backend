@@ -1,6 +1,6 @@
-package com.alibknc.hrmanagementapp.repository;
+package com.alibknc.hrmanagementapp.data.repository;
 
-import com.alibknc.hrmanagementapp.model.Employee;
+import com.alibknc.hrmanagementapp.data.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {

@@ -1,8 +1,7 @@
-package com.alibknc.hrmanagementapp.model;
+package com.alibknc.hrmanagementapp.data.entity;
 
-import com.alibknc.hrmanagementapp.model.enums.PermitType;
+import com.alibknc.hrmanagementapp.data.entity.enums.PermitType;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 

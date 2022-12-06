@@ -1,6 +1,6 @@
 package com.alibknc.hrmanagementapp.client.dto.response;
 
-import com.alibknc.hrmanagementapp.model.enums.ExpenseType;
+import com.alibknc.hrmanagementapp.data.entity.enums.ExpenseType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

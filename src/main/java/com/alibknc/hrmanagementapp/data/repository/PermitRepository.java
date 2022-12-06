@@ -1,6 +1,6 @@
-package com.alibknc.hrmanagementapp.repository;
+package com.alibknc.hrmanagementapp.data.repository;
 
-import com.alibknc.hrmanagementapp.model.Permit;
+import com.alibknc.hrmanagementapp.data.entity.Permit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PermitRepository extends JpaRepository<Permit, Long> {
