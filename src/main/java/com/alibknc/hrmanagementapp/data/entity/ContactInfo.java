@@ -14,8 +14,6 @@ public class ContactInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    Long employeeId;
-
     String phoneNumber;
 
     String email;
