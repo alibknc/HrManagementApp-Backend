@@ -5,7 +5,6 @@ import com.alibknc.hrmanagementapp.data.entity.enums.Level;
 import com.alibknc.hrmanagementapp.data.entity.enums.Position;
 import com.alibknc.hrmanagementapp.data.entity.enums.WorkType;
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
@@ -15,8 +14,6 @@ public class JobInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
-    Long employeeId;
 
     @Enumerated(value = EnumType.STRING)
     Department department;
