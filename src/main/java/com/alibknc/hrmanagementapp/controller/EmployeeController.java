@@ -3,9 +3,7 @@ package com.alibknc.hrmanagementapp.controller;
 import com.alibknc.hrmanagementapp.client.dto.response.EmployeeDto;
 import com.alibknc.hrmanagementapp.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
@@ -21,5 +19,10 @@ public class EmployeeController {
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
         return ResponseEntity.ok(employeeService.getAllEmployees());
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeDto employee) {
+        return ResponseEntity.ok(employeeService.createEmployee(employee));
     }
 }
