@@ -1,10 +1,7 @@
 package com.alibknc.hrmanagementapp.data.entity;
 
 import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -22,4 +19,10 @@ public class Employee {
     String identityNumber;
 
     LocalDate birthDate;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    JobInfo jobInfo;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    ContactInfo contactInfo;
 }
