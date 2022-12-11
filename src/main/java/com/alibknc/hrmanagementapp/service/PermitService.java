@@ -25,4 +25,9 @@ public class PermitService {
                 .map(permitMapper::toPermitDto)
                 .collect(Collectors.toList());
     }
+
+    public PermitDto createPermit(PermitDto permit) {
+        permitRepository.save(permitMapper.toPermit(permit));
+        return permit;
+    }
 }
