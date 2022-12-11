@@ -19,7 +19,7 @@ public class Expense {
 
     int vat;
 
-    @Enumerated
+    @Enumerated(value = EnumType.STRING)
     ExpenseType expenseType;
 
     String details;
