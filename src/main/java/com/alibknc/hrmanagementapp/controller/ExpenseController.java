@@ -3,11 +3,10 @@ package com.alibknc.hrmanagementapp.controller;
 import com.alibknc.hrmanagementapp.client.dto.response.ExpenseDto;
 import com.alibknc.hrmanagementapp.service.ExpenseService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/expenses")
 public class ExpenseController {
@@ -21,5 +20,10 @@ public class ExpenseController {
     @GetMapping
     public ResponseEntity<List<ExpenseDto>> getAllExpenses() {
         return ResponseEntity.ok(expenseService.getAllExpenses());
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> createExpense(@RequestBody ExpenseDto expense) {
+        return ResponseEntity.ok(expenseService.createExpense(expense));
     }
 }
