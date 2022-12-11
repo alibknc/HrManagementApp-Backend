@@ -24,4 +24,9 @@ public class ExpenseService {
                 .map(expenseMapper::toExpenseDto)
                 .collect(Collectors.toList());
     }
+
+    public ExpenseDto createExpense(ExpenseDto expense) {
+        expenseRepository.save(expenseMapper.toExpense(expense));
+        return expense;
+    }
 }
