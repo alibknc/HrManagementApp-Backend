@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
@@ -16,7 +17,7 @@ public class ExpenseDto {
 
     int vat;
 
-    @Enumerated
+    @Enumerated(value = EnumType.STRING)
     ExpenseType expenseType;
 
     String details;
