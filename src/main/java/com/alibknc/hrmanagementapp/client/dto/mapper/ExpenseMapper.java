@@ -8,4 +8,6 @@ import org.mapstruct.Mapper;
 public interface ExpenseMapper {
 
     ExpenseDto toExpenseDto(Expense expense);
+
+    Expense toExpense(ExpenseDto expenseDto);
 }
