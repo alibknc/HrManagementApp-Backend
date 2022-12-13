@@ -4,6 +4,7 @@ import com.alibknc.hrmanagementapp.client.dto.response.EmployeeDto;
 import com.alibknc.hrmanagementapp.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin("http://localhost:3000")
@@ -23,7 +24,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeDto employee) {
+    public ResponseEntity<Object> createEmployee(@Valid @RequestBody EmployeeDto employee) {
         return ResponseEntity.ok(employeeService.createEmployee(employee));
     }
 }

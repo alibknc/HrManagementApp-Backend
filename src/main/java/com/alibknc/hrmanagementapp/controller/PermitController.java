@@ -4,6 +4,7 @@ import com.alibknc.hrmanagementapp.client.dto.response.PermitDto;
 import com.alibknc.hrmanagementapp.service.PermitService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin("http://localhost:3000")
@@ -23,7 +24,7 @@ public class PermitController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createPermit(@RequestBody PermitDto permit) {
+    public ResponseEntity<Object> createPermit(@Valid @RequestBody PermitDto permit) {
         return ResponseEntity.ok(permitService.createPermit(permit));
     }
 }
