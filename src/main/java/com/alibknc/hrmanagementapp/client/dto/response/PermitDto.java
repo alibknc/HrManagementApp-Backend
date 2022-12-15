@@ -4,14 +4,20 @@ import com.alibknc.hrmanagementapp.data.entity.enums.PermitType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.UUID;
 
-@Data
+@Getter
+@Setter
 @Builder
-public class PermitDto {
+public class PermitDto implements Serializable {
+
+    UUID id;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     @JsonProperty("start-date")
@@ -25,4 +31,6 @@ public class PermitDto {
 
     @Enumerated(value = EnumType.STRING)
     PermitType permitType;
+
+    EmployeeDto employee;
 }
