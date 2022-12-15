@@ -2,27 +2,28 @@ package com.alibknc.hrmanagementapp.data.entity;
 
 import lombok.Data;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Data
 @Entity
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @GeneratedValue
+    @Column(length = 36)
+    UUID id;
 
-    @NotBlank
+    @Column(nullable = false)
     String name;
 
-    @NotBlank
+    @Column(nullable = false)
     String surname;
 
-    @NotBlank
+    @Column(nullable = false, unique = true)
     String identityNumber;
 
-    @NotBlank
+    @Column(nullable = false)
     LocalDate birthDate;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
