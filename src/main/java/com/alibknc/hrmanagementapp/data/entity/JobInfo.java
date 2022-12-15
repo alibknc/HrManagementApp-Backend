@@ -18,21 +18,27 @@ public class JobInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     Department department;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     Level level;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     Position position;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     WorkType workType;
 
+    @Column(nullable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
     @JsonProperty("start-date")
     LocalDate startDate;
 
+    @Column(nullable = false)
     int salary;
 }
