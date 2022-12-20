@@ -7,6 +7,7 @@ import com.alibknc.hrmanagementapp.data.entity.Employee;
 import com.alibknc.hrmanagementapp.data.entity.Expense;
 import com.alibknc.hrmanagementapp.data.repository.EmployeeRepository;
 import com.alibknc.hrmanagementapp.data.repository.ExpenseRepository;
+import com.alibknc.hrmanagementapp.exception.EmployeeNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class ExpenseService {
     public void createExpense(CreateExpenseRequest request) {
         Expense expense = expenseMapper.toExpense(request);
         Employee employee = employeeRepository.findById(request.getEmployeeId())
-                .orElseThrow(() -> new RuntimeException("employee not found"));
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee not found"));
         expense.setEmployee(employee);
         expenseRepository.save(expense);
     }

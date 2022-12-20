@@ -7,6 +7,7 @@ import com.alibknc.hrmanagementapp.data.entity.Employee;
 import com.alibknc.hrmanagementapp.data.entity.Permit;
 import com.alibknc.hrmanagementapp.data.repository.EmployeeRepository;
 import com.alibknc.hrmanagementapp.data.repository.PermitRepository;
+import com.alibknc.hrmanagementapp.exception.EmployeeNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ public class PermitService {
     public void createPermit(CreatePermitRequest request) {
         Permit permit = permitMapper.toPermit(request);
         Employee employee = employeeRepository.findById(request.getEmployeeId())
-                .orElseThrow(() -> new RuntimeException("employee not found"));
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee not found"));
         permit.setEmployee(employee);
         permitRepository.save(permit);
     }
